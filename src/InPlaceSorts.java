@@ -2,16 +2,14 @@ public class InPlaceSorts {
 
     public static void insertionSort(int[] list1){
         for(int i = 1; i < list1.length; i++){
-            for(int j= 0; j<i;j++){
-                if(list1[j] > list1[i]) {
-                    int temp = list1[i];
-                    for(int k=i;k>j;k--){
-                        //System.out.println(temp);
-                        list1[k] = list1[k-1];
-                    }
-                    list1[0] = temp;
-                }
+            int temp = list1[i];
+            int j =i-1;
+            while(j>=0 && list1[j]>temp){
+                list1[j+1] = list1[j];
+                j--;
             }
+            list1[j+1] = temp;
+
         }
     }
 
