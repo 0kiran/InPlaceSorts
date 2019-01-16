@@ -14,15 +14,18 @@ public class InPlaceSorts {
     }
 
     public static void selectionSort(double[] list1){
-        double minVal = list1[0];
-        for(int curpos = 0; curpos < list1.length;curpos++){
-            int minPos = curpos;
-            for(int j = 0; j < list1.length; j++){
-                if(list1[curpos] < minVal){
-                    minVal = list1[curpos];
-                }
-            }
-            swapDouble(list1,curpos,minPos);
+        int n = list1.length;
+
+        for (int i = 0; i < n-1; i++)
+        {
+            int min = i;
+            for (int j = i+1; j < n; j++)
+                if (list1[j] < list1[min])
+                    min = j;
+
+            double temp = list1[min];
+            list1[min] = list1[i];
+            list1[i] = temp;
         }
     }
 
@@ -33,7 +36,7 @@ public class InPlaceSorts {
             int i = 0;
             swaps = 0;
             while(i < end){
-                if(list1[i].compareTo(list1[i+1]) < 0){
+                if(list1[i].compareTo(list1[i+1]) > 0){
                     swapString(list1,i,i+1);
                     swaps++;
                 }
@@ -71,7 +74,7 @@ public class InPlaceSorts {
         return arr;
     }
 
-    public String[] randomStringArr(int num, int length){
+    public static String[] randomStringArr(int num, int length){
         String[] arr = new String[num];
         while (num > 0) {
             int i = 0;

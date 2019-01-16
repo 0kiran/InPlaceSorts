@@ -16,7 +16,7 @@ public class Runner {
         for( int num:testarray1){
             System.out.print(num+" ");
         }
-        System.out.println("\nTime taken: "+time1);
+        System.out.println("\nTime taken: "+time1+"\n");
 
 
 
@@ -36,23 +36,23 @@ public class Runner {
         for( double num:testarray2){
             System.out.print(num+" ");
         }
-        System.out.println("\nTime taken: "+time2);
+        System.out.println("\nTime taken: "+time2+"\n");
 
 
         // Bubble Sort
-        double[] testarray3 = InPlaceSorts.randdoubleArr(10);
-        System.out.println("Selection Sort:\n");
+        String[] testarray3 = InPlaceSorts.randomStringArr(10,5);
+        System.out.println("Bubble Sort:\n");
         System.out.println("Before: ");
-        for( double num:testarray3){
+        for( String num:testarray3){
             System.out.print(num+" ");
         }
         System.out.println();
         long time3 = System.nanoTime();
-        InPlaceSorts.selectionSort(testarray2);
+        InPlaceSorts.bubbleSort(testarray3);
         time3 = System.nanoTime()-time3;
 
         System.out.println("After: ");
-        for( double num:testarray3){
+        for( String num :testarray3){
             System.out.print(num+" ");
         }
         System.out.println("\nTime taken: "+time3);
